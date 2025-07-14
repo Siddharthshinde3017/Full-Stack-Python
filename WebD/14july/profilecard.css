@@ -1,0 +1,24 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(204 227 197);
+
+}
+body{
+
+    background-image: url("../14july/image.png");
+    background-size: cover;
+}
+div{
+   border: 5px solid rgb(89, 217, 149);
+   margin-top: 200px;
+   width: 500px;
+   height: 350px;
+   margin-left: 320px;
+   padding: 20px;
+   /* text-align: justify; */
+
+}
+h1{
+        color: #cfd47f;
+}
