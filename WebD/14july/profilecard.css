@@ -11,9 +11,11 @@ body{
 }
 div{
    border: 5px solid rgb(89, 217, 149);
-   margin-top: 200px;
+   border-style: groove;
+   border-radius: 10px;
+   margin-top: 190px;
    width: 500px;
-   height: 350px;
+   height: 370px;
    margin-left: 320px;
    padding: 20px;
    /* text-align: justify; */
