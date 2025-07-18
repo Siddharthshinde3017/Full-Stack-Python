@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px; width: 100px; background-color: #cb5a5a;
+            animation: myfun 6s;
+            position: relative;
+            /* transition: all; */
+        }
+        @keyframes myfun {
+            0% {transform:rotate(0deg); border-radius: 10%;}
+            10%{transform: rotate(45deg);border-radius: 20%; }
+            20%{transform: rotate(90deg);border-radius: 50%;}
+            30%{transform: rotate(180deg);border-radius: 60%;}
+            40%{transform: rotate(360deg);border-radius: 10%;}
+
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
