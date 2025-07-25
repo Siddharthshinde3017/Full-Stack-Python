@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // sum of digits of a number
+        // var num = 12345678;
+        // var sum = 0;
+
+        // while(num>0){
+        //     // var digit = num % 10; // Get the last digit
+        //     // sum = sum + digit; // Build the reversed number
+        //     // num = math.floor(num/10); // Remove the last digit from num
+        //     var digit = num % 10; // Get the last digits
+        //     sum = sum + digit; // Add the digit to sum
+        //     num = Math.floor(num / 10); // Remove the last digit from num
+
+        // }
+        // document.write(sum);
+
+
+        // // Reverse a number
+        // var num = 123456789;
+        // var reverse = 0;    
+        // while(num > 0){
+        //     var digit = num % 10; // Get the last digit
+        //     reverse = reverse * 10 + digit; // Build the reversed number
+        //     num = Math.floor(num / 10); // Remove the last digit from num
+        // }
+        // document.write(reverse);
+
+        // pallendrome
+        var orignal= siddis;
+        var temp = orignal; // Store the original number for comparison 
+        var rev=0;
+        
+        while(orignal>0){
+            var digit = orignal % 10; // Get the last digit
+            rev = rev * 10+digit; // Build the reversed number
+            orignal = Math.floor(orignal / 10); // Remove the last digit from orignal 
+        }
+        document.write(rev);
+
+        if (rev==temp){
+            docment.write("The number is a palindrome");
+        } else {
+            document.write("The number is not a palindrome");
+        }
+    </script>
+    
+</body>
+</html>
