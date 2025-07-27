@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Password Prompt</title>
 </head>
 <body>
     <script>
-        let password
-        do{
-            password= prompt("enter the password")
-            
-        }while(password== 1234567){
-            alert("Access Grant")
+        let password;
+        const correct_password = "12345678";
 
-        }
+        do {
+            password = prompt("Enter the password:");
+        } while (password !== correct_password);  //
+
+        alert("Access Granted");
     </script>
 </body>
 </html>
