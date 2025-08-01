@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="password" placeholder="Enter the password" id="pass">
+        <input type="password" placeholder="Enter the Confirm password " onkeyup="test()" id = "cpass">
+
+        <span id ="msg" style="color: red;"></span>
+
+        <script>
+            function test(){
+                var p1 = document.getElementById("pass").value;
+                var p2 = document.getElementById("cpass").value;
+
+                if(p1==p2){
+                    document.getElementById("msg").innerText= "match";
+                    document.getElementById("msg").style.color= "green";
+
+                }else{
+                    document.getElementById("msg").innerText= "not match";
+
+                }
+
+            }
+        </script>
+    </form>
+</body>
+</html>

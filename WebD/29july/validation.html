@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your Name " id = "Name">
+
+    <button type="button" onclick="check()">submit</button>
+
+    <script>
+        function check(){
+            var fn = document.getElementById("Name").value ;
+            if(fn == ""){
+                alert("this field is required ");
+
+            }
+            if(fn.length>=2 && fn.length<=12){
+                alert("correct");
+            }
+            const regex = '/^[]A-Za-z/'
+            if(regex.test(fn)){
+                alert("Only characters are allowed ")
+            }
+            else{
+                alert("min 2 and maximum 10 allowed");
+            }
+
+
+        }
+    </script>
+</body>
+</html>
