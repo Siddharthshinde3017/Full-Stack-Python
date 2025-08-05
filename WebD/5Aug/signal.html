@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* *{
+
+            justify-content: center;
+            /* align-items: center; */
+            /* text-align: center; */
+        /* } */ 
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 5px solid black;
+            border-radius: 500px;
+            background-color: rgb(203, 212, 212);
+        }
+        .a{
+            align-items: center;
+            height: 100px;
+            width: 100px;
+            border-radius: 70px;
+            border-style: solid;
+            background-color: black;
+            margin: 5px;
+        }
+        #red{
+            border-style: solid;
+            background-color: red;
+            margin: 4px;
+
+        }
+        #green{
+            border-style: solid;
+            background-color: green;
+            margin: 4px;
+
+        }#org{
+            border-style: solid;
+            background-color: orange;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="a" id="r"></div>
+        <div class="a" id="g"></div>
+        <div class="a" id="o"></div>
+
+
+        <button id = "red">Red</button>
+        <button id = "green">Green</button>
+        <button id = "org">Orange</button>
+
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#red").click(function(){
+                $("#r").css('background-color','red')
+                $("#g").css('background-color','')
+                $("#o").css('background-color','')
+                
+            });
+            $("#green").click(function(){
+                $("#g").css('background-color','green')
+                $("#r").css('background-color','')
+                $("#o").css('background-color','')
+
+            });
+            $("#org").click(function(){
+                $("#o").css('background-color','orange')
+                $("#r").css('background-color','')
+                $("#g").css('background-color','')
+                
+                
+            })
+
+        })
+    </script>
+</body>
+</html>
