@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id = "abc" onkeyup="check()" ><br>
+    <!-- <button type="button" onclick="check()">submit</button> -->
+    charecter count: <span id="output1"></span><br>
+    word count: <span id="output2"></span>
+    <script>
+        function check(){
+            var a = document.getElementById("abc").value;
+            var count_1 = a.length;
+            document.getElementById("output1").innerText=count_1;
+
+            var word_count = 0;
+                for(let i=0;i<a.length;i++){
+                    if(a[i] == " "){
+                        word_count++;
+                    document.getElementById("output2").innerText=word_count;
+
+                    }
+
+                }
+            // document.getElementById("output2").innerText=word_count;
+        }
+    </script>
+</body>
+</html>

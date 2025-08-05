@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <button type="button" onclick="myfun()">Comment here</button>
+
+    <div id="myid"></div>
+
+    <script>
+
+        // we use inner html to write html inside html code it in one of the js property
+        function myfun(){
+            var data = "<textarea></textarea><br><button>submit</button>";
+            document.getElementById("myid").innerHTML = data;
+        }
+    </script>
+</body>
+</html>

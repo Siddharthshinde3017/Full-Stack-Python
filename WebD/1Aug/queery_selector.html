@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="head">Hi</h1>
+    <h2 class="head">Hello</h2>
+
+    <h3 class="head">Hi</h3>
+    <h1 class="myhead">Hello</h1>
+
+    <script>
+        // select the heading and edit or give them style without using an seprate css file 
+        // we can use querry selector to get querry for the html document by the Id, Class,Tag.
+        // document.querySelector("h1").style.color="green";
+        // document.querySelector(".myhead").style.color="red";
+        // we need to traverse the collection using loop
+        v =  document.querySelectorAll(".head");
+        alert(v.length);
+        for(i=0; i<v.length; i++){
+            v[i].style.color="green";
+        }
+    </script>
+    
+</body>
+</html>
