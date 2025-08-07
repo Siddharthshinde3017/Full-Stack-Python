@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <select name="tg" id="slct">
+        <option>asdfg</option>
+        <option>lkjhh</option>
+        <option>oiuyt</option>
+        <option>qwerty</option>
+    </select><br>
+    Selected tag : <span id="sp1"> </span>
+
+
+    <script>
+        $(document).ready(function(){
+            // function demo(){
+            //     var v = $("#slct").val();
+            //     alert(v);
+            // }
+            // $("#slct").change(demo);
+            // demo();
+
+            // $("#slct").change(function(){
+            //     var v = $("#slct").val();
+            //     $("#sp1").text(v);           // method 1
+            //     // document.write(v);
+            // });
+
+            $("#slct").change(function(){
+                var v = $("#slct").val();
+                document.getElementById("sp1").innerText = v;
+            });
+        });
+    </script>
+    
+</body>
+</html>

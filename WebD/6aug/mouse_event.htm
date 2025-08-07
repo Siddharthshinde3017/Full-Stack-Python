@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <p>helloe</p>
+    <script>
+     $(document).ready(function(){
+            $("p").mouseover(function(){  // we can add our event like keydown , keypress at position of the peyup
+               $("p").css({"color": "white","background-color":"blue"});
+            });
+             $("p").mouseout(function(){  // we can add our event like keydown , keypress at position of the peyup
+               $("p").css({"color": "black","background-color":"yellow"});
+            });
+        });
+        </script>
+</body>
+</html>
