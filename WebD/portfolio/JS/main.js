@@ -16,3 +16,16 @@ window.onscroll = function () {
   const scrolled = (winScroll / height) * 100;
   progress.style.width = scrolled + "%";
 };
+
+const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+
+  // Select all gallery images
+  document.querySelectorAll('.gallery-img').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImage.src = img.src;         // Set modal image
+      modalTitle.textContent = img.alt; // Set modal title
+      imageModal.show();
+    });
+  });
