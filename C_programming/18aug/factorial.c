@@ -2,15 +2,16 @@
 
 int main(){
     int num; // 5 *4*3*2*1
-    scanf("Enter number = %d",&num);
+    printf("Enter the Number\n");
+    scanf("%d",&num);
     int i;
     int result = 1; 
 
-    for(i=; i>=1; i--){
+    for(i=num; i>=1; i--){
         result = result*i;
-        printf("\n%d",result);
+          printf("\n%d",result);
     }
-        // prinf("%d",num);
+         
 
 
 }
