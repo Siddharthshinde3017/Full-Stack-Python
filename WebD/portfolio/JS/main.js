@@ -15,7 +15,7 @@ window.onscroll = function () {
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   progress.style.width = scrolled + "%";
-};
+};  
 
 const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
   const modalImage = document.getElementById('modalImage');

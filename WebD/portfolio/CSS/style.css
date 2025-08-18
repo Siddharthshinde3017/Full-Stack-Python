@@ -1,3 +1,8 @@
+html, body {
+  background-color: #0d1117;
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #0d1117;
@@ -96,7 +101,7 @@ footer {
   font-size: 0.9rem;
 }
 
-#progress-bar {
+*#progress-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -118,9 +123,10 @@ footer {
 
 /* Qualification Timeline */
 #qualifications {
-  background-color: #121212;
+  background-color: #0d1117;
   color: #f8f9fa;
   position: relative;
+  
 }
 /* Custom spacing for qualification cards */
 #qualifications .card {
@@ -198,6 +204,12 @@ footer {
    /* Skills Page Styling */
 
 /* Heading Animation */
+#skills {
+  min-height: 100vh; /* ensures section fills the screen */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #0d1117; /* match your dark theme */
+}
 #skills h2 {
   font-weight: bold;
   text-transform: uppercase;
@@ -362,3 +374,4 @@ footer {
 }
 
 
+/* no. next thing is to add the download resume button and should i add contact me button at each page or not */
