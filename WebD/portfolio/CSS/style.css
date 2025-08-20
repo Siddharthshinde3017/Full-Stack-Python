@@ -50,6 +50,17 @@ h1, h2, h3, .terminal-box p, .typed-text {
 .nav-link.active {
   color: #58a6ff !important;
 }
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #58a6ff; /* theme color */
+  z-index: 9999;
+  transition: width 0.25s ease;
+}
+
 
 .hero {
   height: 100vh;
@@ -101,7 +112,7 @@ footer {
   font-size: 0.9rem;
 }
 
-*#progress-bar {
+#progress-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -375,3 +386,39 @@ footer {
 
 
 /* no. next thing is to add the download resume button and should i add contact me button at each page or not */
+/* Contact Page Styles */
+#contact-page {
+  background-color: #121212; /* Dark theme */
+}
+
+#contact h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0d6efd; /* Bootstrap primary */
+}
+
+#contact p {
+  color: #bbbbbb;
+}
+
+#contact-form .form-control {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+#contact-form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+
+#contact-form button {
+  background-color: #0d6efd;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #0b5ed7;
+}
