@@ -1,0 +1,23 @@
+python uses interpreter
+# main 4 data types
+#  numeric boolean sequential
+# numeric - int, float, bool.
+# boolean - true , false.
+# sequential - string ,list, tuple
+
+
+*operators
+arithmetic relational assignment logical bitwise membership identity
+
+membership operator to prepare
+
+*control statment - control statment is controls the flow of the program
+     two type of control statment
+    1 conditional statment - it checks the condition and get executed when condition is true only
+                             if we want to execute one or more condition when we want to use conditional statment
+                             if, if else, elif ladder, nested if, for loop, while loop.
+    2 loop statment -   it is a part of control statement logic repeated task again and again then we have to use loop statment
+                        2-types of loop
+                        for loop - used when no of iteration are known
+                        while loop- used when no of iteration are not known but we know condition where to stop.
+
