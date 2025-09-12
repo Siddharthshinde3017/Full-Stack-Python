@@ -21,3 +21,7 @@ membership operator to prepare
                         for loop - used when no of iteration are known
                         while loop- used when no of iteration are not known but we know condition where to stop.
 
+data type  two types
+1 premitive :- imutable
+2non premitive:-mutable
+

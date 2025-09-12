@@ -1,0 +1,11 @@
+method that learn from start
+input()
+print()
+range()
+int()
+11/9/25
+list()
+
+list methods
+append()
+clear()
