@@ -1,0 +1,23 @@
+my_tup = (1,4,2,4,6,3,6,6,4,3,9)
+# len()
+print(len(my_tup))
+
+# min()
+print(min(my_tup))
+# max()
+print(max(my_tup))
+# count()
+print(my_tup.count(6))
+# sum()
+print(sum(my_tup))
+# reversed()
+rev = tuple(reversed(my_tup))
+print(rev)
+# sorted()
+sorted_tup = sorted(my_tup)
+print(sorted_tup)
+# slicing
+print(my_tup[3:7])
+print(my_tup[::-1])
+
+print(my_tup[:])
