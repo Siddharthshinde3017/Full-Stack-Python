@@ -1,0 +1,10 @@
+function = function is a bloc of code that encolosed with aspecific codeefor doing a specific task
+wecan cll this function for reusing this function
+we can create function using def keyword
+ we can also use def keyword  to create method
+
+ in pl sql we cannot call function directly
+ and then we select the procedure and
+ then we use CALL keyword
+
+four arguments 5 progrrams
