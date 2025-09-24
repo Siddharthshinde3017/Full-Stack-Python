@@ -1,5 +1,3 @@
-from tkinter.font import names
-
 
 def showinfo(**info):
     for k, v in info.items():

@@ -1,0 +1,12 @@
+we use return keyword in the specific block of code to return the access of any local variable.
+
+lambda function = function which have no name that known as  lambda function
+they dont have any name
+every lambda declare with lambda keyword
+
+syntax -lambda argument : expression
+where lambda is keyword
+      argument is seperated by commas
+
+
+reccursion is process where function call itself until certain condition meets and its controled by condition
