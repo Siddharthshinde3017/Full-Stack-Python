@@ -1,0 +1,4 @@
+what is decorator
+what is generator
+what is pass statment
+what is pacckage
