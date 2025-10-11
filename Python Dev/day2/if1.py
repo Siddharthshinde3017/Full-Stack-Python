@@ -1,4 +1,4 @@
-# # writing the 5 programs of if condition 1
+ # # writing the 5 programs of if condition 1
 #
 # # a= int(input("enter the number"))
 # #

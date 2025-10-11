@@ -1,0 +1,15 @@
+multiple inheritance
+in multiple inheritance child class inherits properties form multiple parent classes
+
+multi level
+in multilevel inheritance parent class exted property to one child class and that child class exted another child class
+grand parent
+parent
+child
+
+hierarchical inheritance
+one parent class extend or share properties to multiple child classes
+e.g tree
+
+hybrid inheritance
+it is a combination of hierarchical and multiple inheritance

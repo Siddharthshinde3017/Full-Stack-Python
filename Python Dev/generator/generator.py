@@ -1,6 +1,6 @@
 #generator is function
 # used to create iterators
-from fontTools.misc.cython import returns
+# from fontTools.misc.cython import returns
 
 
 def get_fun():
