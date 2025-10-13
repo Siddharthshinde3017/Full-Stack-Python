@@ -1,0 +1,25 @@
+poy means many and morph means forms
+it basiclay means that one thing but have many forms
+
+4 ways in python to implement plymorphism
+1 duck typing
+    we can call any method on an object without checking its type as long as the method exist.
+
+2 operator overloading
+    giveing extended meaning beyond their pre-defined operational meaning
+    e.g operator + is used to add two integers as well as join two strings and merge 2 lists also
+
+3 method overloading   '
+    it is a compiled type polymorphism
+    when class contains two or more methods with the same name but difffrent number of parameters
+    then this scenario can be termed as method overloading.
+    python does not support method overloading directly but we can implement it using different methods
+
+4 method overriding
+    it is a runtime polymorphism
+    method define inside a subclass having a same name as a method in its super class but implement different functionality
+    diffrent class name and same merhod name
+
+
+    i
+

@@ -1,0 +1,4 @@
+if we awnt to assingn value to the varible without creating object then we going to use getter and setter method
+
+super() method is used to access methods from super/ parent class in subclass/ child class that inherit from them.
+

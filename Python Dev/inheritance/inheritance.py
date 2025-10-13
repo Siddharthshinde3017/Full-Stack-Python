@@ -6,7 +6,8 @@ class parent:
 class child(parent):
     def show(self):
         print("Child class")
+        super().display()       #used to accecss properties from parent without calling the method
     name = "xyz"
 c= child()
-c.display()
+# c.display()
 c.show()
