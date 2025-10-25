@@ -8,6 +8,8 @@ class Shape:
             print("No data to calculate area")
 
 s = Shape()
-s.area(5)        # Square
+s.area(5)
+# Square
 s.area(5, 3)     # Rectangle
 s.area()         # No data
+    
