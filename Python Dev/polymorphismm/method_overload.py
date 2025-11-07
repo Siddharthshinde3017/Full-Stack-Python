@@ -1,5 +1,5 @@
 class python:
-    def add1(self,n1,n2,n3=None):
+    def add1(self,n1,n2,):
         print(n1+n2)
 
     def add1(self,n1,n2,n3):
