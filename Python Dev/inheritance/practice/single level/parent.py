@@ -4,7 +4,7 @@ class parent:
 
 class child(parent):
     def play(self):
-        print("Child play games")
+        print("Child study to get job")
 
 c= child()
 c.play()
