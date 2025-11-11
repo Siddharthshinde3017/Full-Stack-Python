@@ -9,4 +9,4 @@ class C(A,B):
     def d(self,a,b):
         print(a+b)
 addi = C()
-C.d(w32,3)
+C.d(32,3)
