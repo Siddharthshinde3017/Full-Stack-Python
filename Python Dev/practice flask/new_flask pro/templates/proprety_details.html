@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details | Real Estate Management</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fc;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .info-box {
+            border-radius: 12px;
+            background: #fff;
+            padding: 25px;
+            box-shadow: 0px 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .amenities i {
+            color: #087f5b;
+        }
+
+        .gallery-img {
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #222;
+            color: #bbb;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">RealEstatePro</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/properties" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="#contactBox" class="nav-link">Contact Admin</a></li>
+                    <li class="nav-item"><a class="btn btn-warning ms-3" href="/admin/login">Admin Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ✅ PROPERTY BANNER IMAGE -->
+    <header>
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" class="banner-img">
+    </header>
+
+    <!-- ✅ PROPERTY INFO -->
+    <section class="container my-5">
+        <div class="info-box">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <h2 class="fw-bold mb-2">Luxury 2BHK Apartment</h2>
+                <span class="badge bg-primary fs-5">₹45,000/month</span>
+            </div>
+
+            <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill"></i> Kothrud, Pune, Maharashtra</p>
+
+            <p class="mt-3">
+                A fully furnished modern apartment located in a peaceful and premium locality.
+                Close to schools, supermarkets, IT hubs, hospitals, and public transport.
+                Ideal for families and working professionals seeking comfortable living.
+            </p>
+
+            <hr>
+
+            <!-- ✅ AMENITIES -->
+            <h5 class="fw-semibold mb-3">Amenities</h5>
+            <div class="row amenities">
+                <div class="col-md-4 mb-2"><i class="bi bi-wifi"></i> High-speed WiFi</div>
+                <div class="col-md-4 mb-2"><i class="bi bi-car-front-fill"></i> Parking Space</div>
+                <div class="col-md-4 mb-2"><i class="bi bi-building"></i> Elevator</div>
+                <div class="col-md-4 mb-2"><i class="bi bi-fan"></i> Air Conditioning</div>
+                <div class="col-md-4 mb-2"><i class="bi bi-shield-check"></i> 24/7 Security</div>
+                <div class="col-md-4 mb-2"><i class="bi bi-tree-fill"></i> Garden View</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ IMAGE GALLERY -->
+    <section class="container mb-5">
+        <h4 class="fw-semibold mb-3">Property Gallery</h4>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc" class="gallery-img w-100">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1560185127-6ed189bf04bb" class="gallery-img w-100">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11" class="gallery-img w-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ CONTACT ADMIN FORM -->
+    <section class="container mb-5" id="contactBox">
+        <div class="info-box">
+            <h4 class="fw-semibold mb-3">Interested in this property?</h4>
+            <p class="text-muted">Send your details — the admin will contact you shortly.</p>
+
+            <form method="POST" action="/inquiry">
+                <input type="hidden" name="property_id" value="101">
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Full Name</label>
+                    <input type="text" class="form-control" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input type="email" class="form-control" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Message</label>
+                    <textarea class="form-control" rows="4" name="message" placeholder="Write your inquiry..." required></textarea>
+                </div>
+
+                <button class="btn btn-primary w-100">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ✅ FOOTER -->
+    <footer>
+        Real Estate Management System © 2025 | Admin Controlled Platform
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,8 @@
 from flask import *
 
 app = Flask(__name__)
+app.secret_key = "qwertyuiop"
+app.config["UPLOAD_FOLDER"]= "D:\\Fortune Cloud\\Python Dev\\practice flask\\new_flask pro\\static\\uploads"
 
 @app.route("/")
 def index():
