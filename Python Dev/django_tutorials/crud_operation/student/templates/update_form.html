@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+{%include 'header.html'%}
+{% for i in data %}
+<form class="form-control" action="/update_form " method="POST">
+    {%csrf_token%}
+    <input type="number" placeholder="user id" name="id" value="{{i.id}}">
+    <input type="text" placeholder="enter your fullname name" class="form-control" name="fullname" value="{{i.fullname}}">    <br><br>
+    <input type="text" placeholder="enter your email" class="form-control" name="email" value="{{i.email}}">    <br><br>
+    <input type="text" placeholder="enter the number" class="form-control" name="contact" value="{{i.contact}}">    <br><br>
+    <input type="password" placeholder="enter the password" class="form-control" name="password" value="{{i.password}}">    <br><br>
+    <input type="text" placeholder="enter the address" class="form-control" name="address" value="{{i.address}}">    <br><br>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+{% endfor %}
+</body>
+
+</html>

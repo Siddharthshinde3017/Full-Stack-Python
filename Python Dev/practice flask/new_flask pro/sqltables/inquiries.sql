@@ -1,0 +1,10 @@
+CREATE TABLE inquiries (
+inquiry_id INTEGER PRIMARY KEY AUTOINCREMENT,
+buyer_id INTEGER NOT NULL ,
+property_id INTEGER NOT NULL,
+message TEXT NOT NULL,
+status TEXT DEFAULT 'Pending',
+created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (buyer_id) REFERENCES buyers(buyer_id) ON DELETE CASCADE,
+FOREIGN KEY (property_id) REFERENCES properties(property_id) ON DELETE CASCADE
+);
