@@ -64,3 +64,27 @@ def update_form(request):
     else:
         return redirect("/welcome")
 
+
+def login(request):
+    return render(request,"login.html")
+
+def check_login(request):
+    if request.method=="POST":
+        em = request.POST["email"]
+        ps = request.POST["password"]
+
+        data= student.objects.filter(email= em,password=ps)
+        if data:
+            return redirect("/Dashboard")
+        else:
+             return redirect("/login")
+    else:
+        return HttpResponse("failed")
+
+
+def Dashboard(request):
+    return render (request,"Dashboard.html")
+
+def logout(request):
+    return redirect("/login")
+

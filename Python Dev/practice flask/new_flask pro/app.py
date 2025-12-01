@@ -1,10 +1,12 @@
 import os.path
 import sqlite3
+import uuid
 
 import bcrypt
 from flask import *
 from functools import wraps
 from database_config import get_db
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.secret_key = "qwertyuiop"
@@ -96,19 +98,32 @@ def add_property():
     cursor = db.cursor()
     cursor.execute(""" insert into properties (title, type, price, location, bedrooms, bathrooms, area, description) 
      values(?,?,?,?,?,?,?,?)""",data)
+
     property_id = cursor.lastrowid
 
     #save images
     images = request.files.getlist("images")
+    upload_folder = app.config["UPLOAD_FOLDER"]
+    os.makedirs(upload_folder,exist_ok=True)
+
     for image in images:
-        filename = image.filename
-        image.save(os.path.join(app.config["UPLOAD_FOLDER"],filename))
+        filename = secure_filename(image.filename)
+        if filename =="":
+            continue
+        #gives unique name
+        extension = filename.rsplit(".",1)[-1]
+        filename = f"{uuid.uuid4().hex}.{extension}"
+
+        image_path = os.path.join(upload_folder,filename)
+        image.save(image_path)
+        image_url = f"/static/uploads/{filename}"
 
         db.execute("""
         insert into property_images (property_id,image_url)
-        values(?,?)""",(property_id,f"/static/uploads/{filename}"))
+        values(?,?)""",(property_id,image_url))
 
     db.commit()
+    flash("property added successfully")
     return redirect(url_for("properties"))
 
 if __name__=="__main__":

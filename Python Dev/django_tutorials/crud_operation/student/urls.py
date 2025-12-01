@@ -11,4 +11,8 @@ urlpatterns = [
     path('deletestudent/<int:id>',views.deletestudent),
     path('edit/<int:id>',views.edit),
     path('update_form',views.update_form),
+    path('login',views.login),
+    path('check_login',views.check_login),
+    path('Dashboard',views.Dashboard),
+    path('logout',views.logout)
 ]
