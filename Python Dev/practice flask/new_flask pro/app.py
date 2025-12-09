@@ -5,6 +5,7 @@ import uuid
 import bcrypt
 from flask import *
 from functools import wraps
+
 from database_config import get_db
 from werkzeug.utils import secure_filename
 
@@ -77,6 +78,11 @@ def properties():
     return  render_template("property_listing.html", properties = properties)
 
 
+@app.route("/admin/properties/add-page")
+@admin_required
+def add_property_page():
+    return render_template("admin_add_property.html")
+
 @app.route("/admin/properties/add",methods=["POST"])
 @admin_required
 def add_property():
@@ -87,7 +93,7 @@ def add_property():
         request.form["type"],
         request.form["price"],
         request.form["location"],
-        request.form["bedrooms"],
+        request.form["bedroom"],
         request.form["bathrooms"],
         request.form["area"],
         request.form["description"]
@@ -96,7 +102,7 @@ def add_property():
     # con  = sqlite3.connect("real_estate.db")
     # cursor = con.cursor()
     cursor = db.cursor()
-    cursor.execute(""" insert into properties (title, type, price, location, bedrooms, bathrooms, area, description) 
+    cursor.execute(""" insert into properties (title, type, price, location, bedroom, bathrooms, area, description) 
      values(?,?,?,?,?,?,?,?)""",data)
 
     property_id = cursor.lastrowid
@@ -124,7 +130,95 @@ def add_property():
 
     db.commit()
     flash("property added successfully")
-    return redirect(url_for("properties"))
+    return redirect(url_for("admin_properties"))
+
+
+@app.route("/admin/properties/delete/<property_id>")
+@admin_required
+def delete_property(property_id):
+    db= get_db()
+
+    #delete property images from db
+    images = db.execute("select image_url from property_images where property_id = ?",(property_id,)).fetchall()
+
+    #delete physical files from uploads folder
+    for img in images:
+        file_path = img["image_url"].replace("/static/uploads/","")
+        full_path = os.path.join(app.config["UPLOAD_FOLDER"],file_path)
+        if os.path.exists(full_path):
+            os.remove(full_path)
+
+    #delete image record from property_images
+    db.execute("delete from property_images where property_id = ?",(property_id,))
+
+    #delete propertty itself
+    db.execute("delete from properties where property_id = ?",(property_id,))
+
+    db.commit()
+    flash("Property deleted successfully")
+    return redirect(url_for("admin_properties"))
+
+@app.route("/admin/properties/edit/<int:property_id>")
+@admin_required
+def edit_property_page(property_id):
+    db = get_db()
+    property_data = db.execute("select * from properties where property_id = ?",(property_id,)).fetchone()
+    images = db.execute("select * from property_images where property_id = ?",(property_id,)).fetchall()
+
+    if not property_data:
+        flash("property not found","danger")
+        return redirect(url_for("admin_properties"))
+    return render_template("edit_property.html",property=property_data,images=images)
+
+@app.route("/admin/properties/update/<int:property_id>",methods = ["POST"] )
+@admin_required
+def update_property(property_id):
+    db = get_db()
+
+    data = (
+        request.form["title"],
+        request.form["type"],
+        request.form["price"],
+        request.form["location"],
+        request.form["bedroom"],
+        request.form["bathrooms"],
+        request.form["area"],
+        request.form["description"],
+        property_id
+    )
+    db.execute("""
+    update properties set title = ?,type = ?,price = ?,location= ?,bedroom = ?,bathrooms = ?,area = ?,description = ? where property_id = ?
+    """,data)
+    # handle new uploaded images (optional)
+    images = request.files.getlist("images")
+    upload_folder = app.config["UPLOAD_FOLDER"]
+
+    for image in images:
+        filename = secure_filename(image.filename)
+        if filename == "":
+            continue
+
+        extension = filename.rsplit(".",1)[-1]
+        filename = f"{uuid.uuid4().hex}.{extension}"
+        image_path = os.path.join(upload_folder,filename)
+        image.save(image_path)
+
+        image_url = f"/static/uploads/{filename}"
+        db.execute("insert into property_images(property_id,image_url) values(?,?)",(property_id,image_url))
+    db.commit()
+    flash("Property updated successfully","success")
+    return redirect(url_for("admin_properties"))
+
+@app.route("/admin/properties/delete-image/<int:image_id>")
+@admin_required
+def delete_property(image_id):
+    db = get_db()
+
+    #get image info first
+    image = db.execute("select * from property_images where property_id = ?",(image_id,)).fetchone()
+    if n
+
+
 
 if __name__=="__main__":
     app.run(debug=True,port=1234)

@@ -14,5 +14,13 @@ urlpatterns = [
     path('login',views.login),
     path('check_login',views.check_login),
     path('Dashboard',views.Dashboard),
-    path('logout',views.logout)
+    path('logout',views.logout),
+    path('addcookie',views.addcookie),
+    path('viewcookie',views.viewcookie),
+    path('fileupload',views.fileupload),
+    path('filesave',views.filesave),
+    # path('viewfile',views.viewfile),
+    path('form',views.form),
+    path('photo',views.photo),
+    path('photosave',views.photosave)
 ]

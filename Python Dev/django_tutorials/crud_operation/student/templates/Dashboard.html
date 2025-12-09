@@ -9,6 +9,14 @@
 <body>
 {%include 'header.html'%}
 
+{{request.session.username}}
+
+{%for i in data%}
+        <p>name is {{i.fullname}}</p>
+        <p>email {{i.email}}</p>
+        <p>contact {{i.contact}}</p>
+
+{%endfor%}
 <h1>Dashboard</h1>
 <a href="/logout" class="btn btn-success">logout</a>
 </body>
