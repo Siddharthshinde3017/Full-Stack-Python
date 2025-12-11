@@ -60,7 +60,19 @@ def admin_logout():
 @app.route("/admin/dashboard")
 @admin_required
 def admin_dashboard():
-    return render_template("admin_dashboard.html")
+    db = get_db()
+
+    total_properties = db.execute("SELECT COUNT(*) AS total FROM  properties").fetchone()["total"]
+
+    total_buyers = db.execute("select count(*) AS total from buyers").fetchone()["total"]
+
+    total_inquiries = db.execute("select count(*) AS total from inquiries").fetchone()["total"]
+
+    return render_template("admin_dashboard.html",
+                           total_properties=total_properties,
+                           total_buyers = total_buyers,
+                           total_inquiries = total_inquiries
+                           )
 
 @app.route("/admin/properties")
 @admin_required
@@ -211,12 +223,52 @@ def update_property(property_id):
 
 @app.route("/admin/properties/delete-image/<int:image_id>")
 @admin_required
-def delete_property(image_id):
+def delete_property_image(image_id):
     db = get_db()
 
     #get image info first
-    image = db.execute("select * from property_images where property_id = ?",(image_id,)).fetchone()
-    if n
+    image = db.execute("select * from property_images where image_id = ?",(image_id,)).fetchone()
+    if not image:
+        flash("Image not found","danger")
+        return redirect(url_for("admin_properties"))
+
+    #delete actual file
+    file_path = image["image_url"].replace("/static/uploads/","")
+    full_path = os.path.join(app.config["UPLOAD_FOLDER"],file_path)
+    if os.path.exists(full_path):
+        os.remove(full_path)
+
+    #delete from db
+    property_id = image["property_id"]
+    db.execute("Delete from property_images where image_id = ?",(image_id,))
+    db.commit()
+
+    flash("Image deleted successfully","success")
+    return redirect(url_for("edit_property_page",property_id = property_id))
+
+
+@app.route("/admin/inquiries")
+@admin_required
+def admin_inquiries():
+    db = get_db()
+    inquiries = db.execute("""
+    select i.*,p.title AS property_title
+    from inquiries i 
+    left join properties p ON p.property_id = i.property_id
+    order by i.created_at desc
+    """).fetchall()
+    return render_template("admin_inquiries.html",inquiries =inquiries)
+
+@app.route("/admin/inquiries/respond/<int:inquiry_id>")
+@admin_required
+def respond_inquiry(inquiry_id):
+    db = get_db()
+    db.execute("update inquiries set status = 'Responded' where inquiry_id =? ",(inquiry_id,))
+    db.commit()
+
+    flash("Inquiry marked as responded", "success")
+    return redirect(url_for('admin_inquiries'))
+
 
 
 
